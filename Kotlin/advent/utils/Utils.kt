@@ -1,4 +1,4 @@
-package advent.day03
+package advent.utils
 
 // from https://github.com/kotlin-hands-on/advent-of-code-kotlin-template
 import java.io.File

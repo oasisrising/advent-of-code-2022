@@ -1,5 +1,8 @@
 package advent.day03
 
+import advent.utils.println
+import advent.utils.readInput
+
 fun main() {
 
     fun getPriority(input: Char): Int {
