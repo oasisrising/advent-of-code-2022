@@ -3,10 +3,9 @@ package advent.day03
 fun main() {
 
     fun getPriority(input: Char): Int {
-        var code = input.code
+        val code = input.code
 
-        var diff = 0;
-        diff = if (code <= 'Z'.code && code >= 'A'.code) {
+        val diff = if (code in 'A'.code .. 'Z'.code) {
             'A'.code - 27
         } else {
             'a'.code - 1;
@@ -17,9 +16,9 @@ fun main() {
     fun part1(input: List<String>) {
         var total = 0
         for (line in input) {
-            var side1 = line.slice(0 until line.length/2);
-            var side2 = line.slice(line.length/2 until line.length);
-            var intersect = side1.asIterable().intersect(side2.asIterable())
+            val side1 = line.slice(0 until line.length/2);
+            val side2 = line.slice(line.length/2 until line.length);
+            val intersect = side1.asIterable().intersect(side2.asIterable())
 
             total += getPriority(intersect.first())
         }
@@ -27,10 +26,10 @@ fun main() {
     }
 
     fun part2(input: List<String>) {
-        var groups = input.chunked(3);
+        val groups = input.chunked(3);
         var total = 0;
         for (group in groups) {
-            var intersect = group[0].asIterable().intersect(group[1].asIterable()).intersect(group[2].asIterable());
+            val intersect = group[0].asIterable().intersect(group[1].asIterable()).intersect(group[2].asIterable());
             total += getPriority(intersect.first())
         }
         total.println()
